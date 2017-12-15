@@ -25,7 +25,7 @@
     </properties>
 
     <build>
-        <finalName>page-download</finalName>
+        <finalName>${project.name}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -36,7 +36,6 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
                     <descriptor>src/assembly/bin.xml</descriptor>
-                    <finalName>page-download</finalName>
                 </configuration>
                 <executions>
                     <execution>
@@ -47,28 +46,36 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>com.bazaarvoice.maven.plugins</groupId>
+                <artifactId>s3-upload-maven-plugin</artifactId>
+                <version>1.4</version>
+                <configuration>
+                    <bucketName>alterloki.page-download</bucketName>
+                    <source>target/page-download-app.zip</source>
+                    <destination>page-download-app.zip</destination>
+                    <accessKey>${env.AWS_ACCESS_KEY}</accessKey>
+                    <secretKey>${env.AWS_SECRET_ACCESS_KEY}</secretKey>
+                    <endpoint>s3.eu-west-1.amazonaws.com</endpoint>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>javax.xml.bind</groupId>
+                        <artifactId>jaxb-api</artifactId>
+                        <version>2.3.0</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>s3-upload</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
-        <extensions>
-            <extension>
-                <groupId>org.springframework.build</groupId>
-                <artifactId>aws-maven</artifactId>
-                <version>5.0.0.RELEASE</version>
-            </extension>
-        </extensions>
+
     </build>
-
-
-    <distributionManagement>
-        <repository>
-            <id>aws-release</id>
-            <name>AWS Release Repository</name>
-            <url>s3://alterloki.page-download/release</url>
-        </repository>
-        <snapshotRepository>
-            <id>aws-snapshot</id>
-            <name>AWS Snapshot Repository</name>
-            <url>s3://alterloki.page-download/snapshot</url>
-        </snapshotRepository>
-    </distributionManagement>
 
 </project>

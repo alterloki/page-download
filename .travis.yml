@@ -1,4 +1,14 @@
 language: java
 jdk:
   - oraclejdk8
-script: mvn deploy
+script: mvn clean install
+deploy:
+  - provider: s3
+  - provider: codedeploy
+    access_key_id: AWS_ACCESS_KEY
+    secret_access_key: AWS_SECRET_ACCESS_KEY
+    bucket: "alterloki.page-download"
+    key: page-download-app.zip
+    application: MyApp
+    deployment_group: MyDeploymentGroup
+    region: "Region in which your ec2 instance is."
