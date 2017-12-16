@@ -2,9 +2,13 @@ version: 0.0
 os: linux
 files:
   - source: /page-download.jar
-    destination: /var/page-download/page-download.jar
+    destination: /usr/local/page-download
+  - source: /scripts/page-download.sh
+    destination: /usr/local/bin
+  - source: /scripts/page-download.service
+    destination: /etc/systemd/system
 hooks:
-  BeforeInstall:
+  AfterInstall:
     - location: scripts/install.sh
       timeout: 300
       runas: root

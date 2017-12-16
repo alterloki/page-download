@@ -4,14 +4,16 @@
     <formats>
         <format>zip</format>
     </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
     <fileSets>
         <fileSet>
             <directory>scripts</directory>
             <outputDirectory>scripts</outputDirectory>
             <includes>
                 <include>*.sh</include>
+                <include>*.service</include>
             </includes>
-            <lineEnding>dos</lineEnding>
+            <lineEnding>keep</lineEnding>
         </fileSet>
         <fileSet>
             <includes>
