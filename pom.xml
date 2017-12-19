@@ -51,12 +51,12 @@
                 <artifactId>s3-upload-maven-plugin</artifactId>
                 <version>1.4</version>
                 <configuration>
-                    <bucketName>alterloki.page-download</bucketName>
+                    <bucketName>ru.alterloki.page-download</bucketName>
                     <source>target/page-download-app.zip</source>
                     <destination>page-download-app.zip</destination>
                     <accessKey>${env.AWS_ACCESS_KEY}</accessKey>
                     <secretKey>${env.AWS_SECRET_ACCESS_KEY}</secretKey>
-                    <endpoint>s3.eu-west-1.amazonaws.com</endpoint>
+                    <endpoint>s3.eu-central-1.amazonaws.com</endpoint>
                 </configuration>
                 <dependencies>
                     <dependency>

@@ -4,11 +4,11 @@ jdk:
 script: mvn clean install
 deploy:
   - provider: codedeploy
-    bucket: alterloki.page-download
+    bucket: ru.alterloki.page-download
     key: page-download-app.zip
     application: page-download
     deployment_group: page-download_dep_group
-    region: eu-west-1
+    region: eu-central-1
     secret_access_key:
       secure: rB6OH9ELsNf13RKuSQBb1/FcxQED8jMNNpaHXOU4W5b+0xjQJx9EDRFLWblIWog9yxyd2k8z+uihb2j67AH6DyK3WPGOTgQPaR9w4fih9YM4aToh/wSih2giRhXpTgkh3/7FMPMNQGrowufTy0WQVwXaf6tAcOkq9UHPPx84SONjH4uudlLOZrBnpYTm6TbhVgLc9syNncYwqUrIpJkoGu+OnnalOrrZrKghiw6ZzxOKmS3K/WfI0QsgxLRDdfLyBpeG3D2EJBlLAO4Rgu/4SoSQhRxAfzACyZsCqrXAx/ffMCkjo6DDV0OU2kDBLlQIUcsrris/wGr5FZdWoOP8p4fQpTRzHDFAco9VQmON+vKC7ZP9iRpxFxIqnFBrjpU9FWSpjpPTw3lnElwiKpwegsrGxnGzufwRf3OoZfFYkmqkAwz3ZTcT3mTE8jHXmFgHNhoP1htjKOJo9JV9VhlmiaQvd14rdmbLi4Zr36FObnjLhUhadGu7NMq9AnAciDoXBIjapNDlTYzYtJrdg9v9OaFv85Fj61Byaqkbm9RxhP3BUc7D6ZAWM7zK33YUkP9y3HQrVUhA1PsO+230t3ZF99UB5tIu3i1sgJHgrfWSChrgPuh/OVcSK7czlUammvNREZMl5FkJBzqTV3Xf/piBUoz/2xyKt72aDLTiqZRiBL8=
     access_key_id:
