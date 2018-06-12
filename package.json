@@ -1,0 +1,44 @@
+{
+  "name": "page-download",
+  "version": "0.1.0",
+  "description": "Tool for downloading http data",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:alterloki/page-download.git"
+  },
+  "keywords": [
+    "rest",
+    "hateoas",
+    "spring",
+    "data",
+    "react"
+  ],
+  "author": "Shevenkov Alexey",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/alterloki/page-download/issues"
+  },
+  "homepage": "https://github.com/alterloki/page-download",
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "rest": "^1.3.1",
+    "webpack": "^1.12.2",
+    "jquery": "*",
+    "bootstrap": "*",
+    "reactstrap": "*",
+    "react-router-dom": "*"
+  },
+  "scripts": {
+    "watch": "webpack --watch -d"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.28.0",
+    "style-loader": "^0.13.0"
+  }
+}

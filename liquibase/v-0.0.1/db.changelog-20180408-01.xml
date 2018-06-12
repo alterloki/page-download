@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="20180408-01" author="alterloki">
+        <comment>
+            Создание таблицы источников
+        </comment>
+        <sql>
+            CREATE TABLE source
+            (
+            id bigint NOT NULL,
+            name character varying(255),
+            root_url character varying(255),
+            CONSTRAINT source_pkey PRIMARY KEY (id)
+            )
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
