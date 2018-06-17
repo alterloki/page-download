@@ -1,4 +1,4 @@
-package ru.alterloki.tools;
+package ru.alterloki.download;
 
 public interface Downloader {
 

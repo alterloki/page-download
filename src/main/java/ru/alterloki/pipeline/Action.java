@@ -1,12 +1,18 @@
 package ru.alterloki.pipeline;
 
-import ru.alterloki.tools.Downloader;
-import ru.alterloki.tools.Extractor;
-import ru.alterloki.tools.Saver;
-
 public class Action {
 
-    private Downloader downloader;
-    private Extractor extractor;
-    private Saver saver;
+    private final ActionType actionType;
+
+    public Action(ActionType actionType) {
+        this.actionType = actionType;
+    }
+
+    public ActionType getActionType() {
+        return actionType;
+    }
+
+    public void setParam(String name, String value) {
+
+    }
 }

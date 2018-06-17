@@ -1,6 +1,8 @@
 language: java
 jdk:
 - oraclejdk8
+before_install:
+  - mysql -e 'create database jleague13 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;'
 script: mvn clean install
 deploy:
   - provider: codedeploy
