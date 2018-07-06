@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -16,6 +18,7 @@ public class Pipeline {
     private long id;
 
     private String name;
+    private List<ActionMetaInfo> metaInfos = new ArrayList<>();
 
     public Pipeline() {
     }
@@ -30,5 +33,13 @@ public class Pipeline {
 
     public String getName() {
         return name;
+    }
+
+    public void addAction(ActionMetaInfo actions) {
+        metaInfos.add(actions);
+    }
+
+    public List<ActionMetaInfo> getActionMetaInfos() {
+        return metaInfos;
     }
 }

@@ -1,6 +1,6 @@
 package ru.alterloki.pipeline;
 
-public class Action {
+public abstract class Action {
 
     private final ActionType actionType;
 
@@ -12,7 +12,5 @@ public class Action {
         return actionType;
     }
 
-    public void setParam(String name, String value) {
-
-    }
+    public abstract void act();
 }
