@@ -6,4 +6,5 @@ import ru.alterloki.pipeline.Pipeline;
 
 @RepositoryRestResource(collectionResourceRel = "pipeline", path = "pipeline")
 public interface PipelineRepository extends PagingAndSortingRepository<Pipeline, Long> {
+
 }
